@@ -1,0 +1,18 @@
+angular.module('app', [
+  'ngSanitize',
+  'ngTouch',
+  'ngAnimate',
+  'angular-cache',
+  'ui.router',
+  'ui.bootstrap',
+  'cgBusy',
+  'toastr',
+  'xeditable',
+  'pascalprecht.translate',
+  'ncy-angular-breadcrumb',
+  'ngTable',
+  'ngMessages',
+  'ui.toggle',
+  'auth0.lock',
+  'angular-jwt',
+]);

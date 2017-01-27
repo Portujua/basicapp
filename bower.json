@@ -34,7 +34,10 @@
     "angular-xeditable": "^0.6.0",
     "angular-translate": "^2.13.1",
     "angular-breadcrumb": "^0.5.0",
-    "angular-messages": "^1.6.1"
+    "angular-messages": "^1.6.1",
+    "auth0-lock": "",
+    "angular-lock": "",
+    "angular-jwt": ""
   },
   "resolutions": {
     "angular": "^1.6.1"

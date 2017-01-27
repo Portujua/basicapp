@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-lg-4 offset-lg-4">
+      <div class="panel panel-default">
+        <button class="btn btn-primary btn-block" ng-click="$ctrl.goLogin()">Login</button>
+      </div>
+
+      <div class="text-muted small margin-top text-center">
+        Last update: {{ $ctrl.PageService.getAppInfo().date | date:'MMMM dd, yyyy' }} ({{ $ctrl.PageService.getAppInfo().version | available }})
+      </div>
+    </div>
+  </div>
+</div>
