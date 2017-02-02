@@ -63,6 +63,8 @@ class TestController {
       order: -1,
       isFixed: true,
     });
+
+    this.embedText = 'This is a random text :) with some link https://www.google.com';
   };
 
   remove() {
