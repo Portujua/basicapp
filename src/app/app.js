@@ -15,4 +15,5 @@ angular.module('app', [
   'ui.toggle',
   'mgcrea.ngStrap',
   'ngEmbed',
+  'angucomplete-alt',
 ]);
