@@ -13,4 +13,5 @@ angular.module('app', [
   'ngTable',
   'ngMessages',
   'ui.toggle',
+  'mgcrea.ngStrap',
 ]);
