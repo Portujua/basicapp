@@ -7,7 +7,7 @@ var plugins = require('gulp-load-plugins')({
 // Settings
 var settings = {
   env: 'dev',  // Environment type (dev | dist)
-  port: 9090,  // Port's number
+  port: 9999,  // Port's number
   get isDevelopment() { return this.env === 'dev'; },
   get isDistribution() { return this.env === 'dist'; },
 };

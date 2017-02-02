@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-lg-12 col-xl-12">
+    <h2>Translation</h2>
+    <code>{{ $ctrl.translate | translate }}</code>
+
+    <hr>
+
+    <h2>New classes</h2>
+    <p>Code</p>
+    <p><code>btn-outline</code></p>
+    <p>Result:</p>
+    <button class="btn btn-danger btn-outline">Hello there!</button>
+
+    <hr>
+
+    <h2>Datepicker</h2>
+    <div uib-datepicker ng-model="dt" ></div>
+
+    <hr>
+
+    <h2>Panels</h2>
+    <div class="panel panel-default">
+      <div class="panel-heading">Panel title</div>
+      <div class="panel-body">
+        <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="$ctrl.opened" ng-click="$ctrl.opened = true;"   show-button-bar="true" on-open-focus="true"/>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi aspernatur fuga culpa error iste doloribus, doloremque maiores nulla ipsa necessitatibus fugit dicta ducimus, quos odio quod similique animi cupiditate obcaecati?
+
+        <div class="alert alert-warning">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, excepturi hic unde eligendi obcaecati ullam sint porro a voluptatem ut natus, laboriosam accusantium dolor nisi sequi maiores at totam impedit.
+        </div>
+
+        <div class="alert alert-success">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, excepturi hic unde eligendi obcaecati ullam sint porro a voluptatem ut natus, laboriosam accusantium dolor nisi sequi maiores at totam impedit.
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Tables</h2>
+    <p><small>* Double click to edit</small></p>
+    <table ng-table="$ctrl.tableParams" class="table table-bordered table-striped" show-filter="true">
+      <colgroup>
+        <col width="70%">
+      </colgroup>
+      <tr ng-repeat="user in $data">
+        <td title="'Name'" filter="{ name: 'text' }" sortable="'name'">
+          <span editable-text="user.name" buttons="no" onaftersave="" onbeforesave="" e-required>
+            {{ user.name | available }}
+          </span>
+        </td>
+        <td title="'Age'" filter="{ age: 'number' }" sortable="'age'">
+          <span editable-number="user.age" e-step="any" e-min="0" e-max="999" buttons="no" onaftersave="" onbeforesave="" e-required>
+            {{ user.age | number | available }}
+          </span>
+        </td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <h2>Toastr</h2>
+    <button class="btn btn-primary" ng-click="$ctrl.something()" ui-sref="root.test">Show me some toastr's</button>
+
+    <hr>
+
+    <h2>Modals</h2>
+    <button class="btn btn-primary" ng-click="$ctrl.open()">Open modal</button>
+  </div>
+</div>
