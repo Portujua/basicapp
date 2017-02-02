@@ -67,5 +67,19 @@
 
     <h2>Modals</h2>
     <button class="btn btn-primary" ng-click="$ctrl.open()">Open modal</button>
+
+    <hr>
+
+    <h2>Angular Busy</h2>
+    <p>Angular Busy is used for loading states inside containers. Similar to <a href="http://chieffancypants.github.io/angular-loading-bar/" target="_blank">Angular Loading Bar</a></p>
+    <p>Example:</p>
+    <div class="panel panel-default" cg-busy="$ctrl.randomRequest">
+      <div class="panel-heading">cgBusy</div>
+      <div class="panel-body">
+        <p>We will simulate a web request to some website.</p>
+
+        <button class="btn btn-primary" ng-click="$ctrl.someRequest()">Simulate web request</button>
+      </div>
+    </div>
   </div>
 </div>

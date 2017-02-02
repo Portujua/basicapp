@@ -1,13 +1,14 @@
 ;(() => {
 
 class TestController {
-  constructor(RESTful, StorageService, RootService, toastr, PromptService, SidebarService, $timeout, NgTableParams) {
+  constructor(RESTful, StorageService, RootService, toastr, PromptService, SidebarService, $timeout, NgTableParams, $http) {
     this.RESTful = RESTful;
     this.greetings = RootService.greeting('Basic app');
     this.toastr = toastr;
     this.PromptService = PromptService;
     this.SidebarService = SidebarService;
     this.$timeout = $timeout;
+    this.$http = $http;
 
     toastr.success('Hello world!', 'Toastr fun!');
 
@@ -17,6 +18,7 @@ class TestController {
 
     let data = [{ name: 'Moroni', age: 30 }, { name: 'Loroni', age: 20 }, { name: 'Aroni', age: 50 }];
     this.tableParams = new NgTableParams({}, { dataset: data, counts: [] });
+    this.isBusy = false;
   };
 
   $onInit() {
@@ -102,6 +104,15 @@ class TestController {
     this.toastr.error('Hello world!', 'Toastr fun!');
     this.toastr.warning('Hello world! (again)', 'Toastr fun!');
     this.toastr.info('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae possimus dicta, laboriosam iusto animi eos voluptatibus, nemo laborum voluptatem rem pariatur molestiae obcaecati sint magni deserunt ullam nam quis perspiciatis!', 'Toastr fun!');
+  }
+
+  someRequest(){
+    this.isBusy = true;
+    
+    this.randomRequest = this.$http.get('http://httpbin.org/delay/2')
+      .then((response) => {
+        this.isBusy = false;
+      })
   }
 }
 
