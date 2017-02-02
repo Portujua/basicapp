@@ -48,7 +48,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <span class="navbar-text">
-            Welcome, <a href="" class="navbar-link bold" ng-click="$ctrl.openProfileModal()">{{ session.username | uppercase }}</a> <small>({{ session.role.name }})</small>
+            Welcome, <a href="" class="navbar-link bold">{{ session.username | uppercase }}</a> <small>({{ session.role.name }})</small>
           </span>
         </li>
         <!-- <li><a href="">Link</a></li> -->
@@ -59,13 +59,9 @@
           <ul class="dropdown-menu">
             <li class="dropdown-header">Session administration</li>
             <li><a href="" ng-click="$ctrl.openProfileModal()">My Profile</a></li>
-            <li><a href="">Settings</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Site administration</li>
-            <li><a href="" ui-sref="root.clientlist">Client management</a></li>
-            <li><a href="" ui-sref="root.userlist">User management</a></li>
-            <li><a href="" ui-sref="root.personnellist">Personnel management</a></li>
-            <li><a href="" ui-sref="root.riglist">Rig management</a></li>
+            <li><a href="" ui-sref="root.clientlist">User management</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="" ui-sref="logout">Sign Out</a></li>
           </ul>

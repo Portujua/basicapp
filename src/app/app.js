@@ -13,6 +13,4 @@ angular.module('app', [
   'ngTable',
   'ngMessages',
   'ui.toggle',
-  'auth0.lock',
-  'angular-jwt',
 ]);

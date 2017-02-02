@@ -1,5 +1,5 @@
 angular.module('app')
-  .run(($rootScope, PageService, SidebarService, $uibModalStack, editableOptions, editableThemes, toggleConfig, lock) => {
+  .run(($rootScope, PageService, SidebarService, $uibModalStack, editableOptions, editableThemes, toggleConfig) => {
     // X-Editable settings (theme)
     editableThemes.bs3.inputClass = 'input-sm';
     editableThemes.bs3.buttonsClass = 'btn-sm';
@@ -52,22 +52,4 @@ angular.module('app')
       // $('body, #sb-site').css('height', '1px');
       // $('body, #sb-site').css('height', 'auto');
     });
-
-
-
-    // For use with UI Router 
-    lock.interceptHash();
-   
-    /*lock.on('authenticated', function(authResult) {
-      console.log("HOLAAAAAAAAAAAA",authResult)
-      localStorage.setItem('id_token', authResult.idToken);
-   
-      lock.getProfile(authResult.idToken, function(error, profile) {
-        if (error) {
-          console.log(error);
-        }
-        console.log(JSON.stringify(profile))
-        //localStorage.setItem('profile', JSON.stringify(profile));
-      });
-    });*/
   });

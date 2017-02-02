@@ -10,23 +10,19 @@ class LoginController {
     //this.Auth.logout();
   }
 
-  goLogin() {
-    this.Auth.goLogin();
-  }
-
-  /*login(credentials) {
-    this.isLoading = true;
+  login(credentials) {
+    this.isLoading = false; // should be true;
     this.isError = false;
 
     this.Auth.login(credentials)
-      .then((response) => {
-        this.Auth.goHome();
-      }, (response) => {
-        this.isError = true;
-      }).finally(() => {
-        this.isLoading = false;
-      });
-  }*/
+      // .then((response) => {
+      //   this.Auth.goHome();
+      // }, (response) => {
+      //   this.isError = true;
+      // }).finally(() => {
+      //   this.isLoading = false;
+      // });
+  }
 }
 
 angular.module('app')

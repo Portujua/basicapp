@@ -1,5 +1,5 @@
 angular.module('app')
-  .config(($logProvider, $locationProvider, $provide, toastrConfig, lockProvider) => {
+  .config(($logProvider, $locationProvider, $provide, toastrConfig) => {
     // Log configuration
     $logProvider.debugEnabled(true);
 
@@ -31,10 +31,5 @@ angular.module('app')
       return (uiViewElement) => {
         window.scrollTo(0, 0);
       };
-    });
-
-    lockProvider.init({
-      clientID: 't8CVu1NXH7kttKJ4lj9BPaN0J5eDiiTt',
-      domain: 'basicapp.auth0.com'
     });
   });

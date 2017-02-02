@@ -23,7 +23,7 @@
             url: '/home',
             template: '<home></home>',
             title: 'Home',
-            resolve: { authRequired: ['Auth', (a) => { console.log(a); return a.checkSession(); }] },
+            resolve: { authRequired: ['Auth', (a) => { return a.checkSession(); }] },
             // Breadcrumbs info
             ncyBreadcrumb: { label: 'Home' }
           })
