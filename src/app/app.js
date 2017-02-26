@@ -13,4 +13,7 @@ angular.module('app', [
   'ngTable',
   'ngMessages',
   'ui.toggle',
+  'mgcrea.ngStrap',
+  'ngEmbed',
+  'angucomplete-alt',
 ]);

@@ -34,7 +34,11 @@
     "angular-xeditable": "^0.6.0",
     "angular-translate": "^2.13.1",
     "angular-breadcrumb": "^0.5.0",
-    "angular-messages": "^1.6.1"
+    "angular-messages": "^1.6.1",
+    "angular-strap": "^2.3.12",
+    "bootstrap-additions": "^0.3.1",
+    "ngEmbed": "ng-embed#^2.1.1",
+    "angucomplete-alt": "^3.0.0"
   },
   "resolutions": {
     "angular": "^1.6.1"
