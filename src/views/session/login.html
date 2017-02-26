@@ -9,7 +9,7 @@
               <label for="email">Username</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                <input type="text" class="form-control" name="username" placeholder="Enter your username" ng-model="$ctrl.credentials.username"  required autofocus ng-disabled="$ctrl.isLoading">
+                <input type="text" class="form-control" name="username" placeholder="Enter your username" ng-model="$ctrl.credentials.username"  required autofocus ng-disabled="$ctrl.isLoading" tabindex="1">
               </div>
             </div>
             <div class="form-group">
@@ -18,10 +18,10 @@
               </label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-fw fa-key"></i></span>
-                <input type="password" class="form-control" name="password" placeholder="Enter your password" ng-model="$ctrl.credentials.password" required ng-disabled="$ctrl.isLoading">
+                <input type="password" class="form-control" name="password" placeholder="Enter your password" ng-model="$ctrl.credentials.password" required ng-disabled="$ctrl.isLoading" tabindex="2">
               </div>
             </div>
-            <button type="submit" class="btn btn-block btn-primary btn-outline btn-lg" ng-disabled="form.$invalid || $ctrl.isLoading">
+            <button type="submit" class="btn btn-block btn-primary btn-outline btn-lg" ng-disabled="form.$invalid || $ctrl.isLoading" tabindex="3">
               <span ng-switch="$ctrl.isLoading">
                 <span ng-switch-when="true">
                   <i class="fa fa-fw fa-spin fa-spinner"></i> Signing in
