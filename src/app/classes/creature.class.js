@@ -157,15 +157,15 @@ class Creature {
   canClone() {
     // In order to clone the creature must have more than 0.5 health
     // and half of it will be reduced from the parent.
-    return this.health >= 1.5;
+    return this.health >= 2;
   }
 
   clone() {
     if (this.canClone()) {
-      this.health /= 10;
+      this.health = 0.5;
       var newDNA = new DNA(this.dna.data);
       newDNA.mutate();
-      return new Creature(this.position.x, this.position.y, newDNA);
+      return new Creature(random(width), random(height), newDNA);
     }
 
     return null;

@@ -5,7 +5,7 @@ class Food {
     this.position = createVector(x, y);
     this.createdAt = new Date();
 
-    var poisonProbability = 0.25;
+    var poisonProbability = 0.2;
 
     this.type = type === null
       ? (random() < poisonProbability ? -1 : 1)
@@ -81,7 +81,7 @@ class Food {
   }
 
   static maxAllowed() {
-    return 100;
+    return 50;
   }
 
   static spawnRandom(food, interval = 1) {

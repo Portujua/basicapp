@@ -1,5 +1,5 @@
 class DNA {
-  constructor(dna = [random(), random(), random(0, 200), random(0, 50)]) {
+  constructor(dna = [random(), -random(), random(0, 200), random(0, 100)]) {
     this.data = [
       dna[DNA.getFoodAttractionIndex()], 
       dna[DNA.getPoisonAttractionIndex()], 
