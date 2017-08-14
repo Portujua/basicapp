@@ -13,7 +13,7 @@ class Food {
   }
 
   getNutrition() {
-    return this.isFood() ? 0.25 : -0.5;
+    return this.isFood() ? this.type * 0.25 : -0.5;
   }
 
   isFood() {
@@ -22,6 +22,10 @@ class Food {
 
   isPoison() {
     return this.type < 0;
+  }
+
+  isBody() {
+    return this.type > 1;
   }
 
   timeAvailable() {

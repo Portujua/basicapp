@@ -69,10 +69,21 @@ class Creature {
       closest[DNA.getFoodAttractionIndex()] = (d < closest[DNA.getFoodAttractionIndex()].distance && food[i].isFood() && d < this.dna.getFoodViewRadius())
         ? { position: food[i].position, distance: d } : closest[DNA.getFoodAttractionIndex()];
       
-      closest[DNA.getPoisonAttractionIndex()] = (d < closest[DNA.getPoisonAttractionIndex()].distance && food[i].isPoison() && d < this.dna.getPoisonViewRadius())
-        ? { position: food[i].position, distance: d } : closest[DNA.getPoisonAttractionIndex()];
+      closest[DNA.getPoisonRepultionIndex()] = (d < closest[DNA.getPoisonRepultionIndex()].distance && food[i].isPoison() && d < this.dna.getPoisonViewRadius())
+        ? { position: food[i].position, distance: d } : closest[DNA.getPoisonRepultionIndex()];
 
       if (d < 5) {
+        if (food[i].isFood()) {
+          stats.totalFoodEaten++;
+
+          if (food[i].isBody()) {
+            stats.totalBodiesEaten++;
+          }
+        }
+        else {
+          stats.totalPoisonEaten++;
+        }
+
         this.health += food[i].getNutrition();
         food.splice(i, 1);
       }
@@ -84,16 +95,16 @@ class Creature {
       this.applyForce(steer);
     }
 
-    if (closest[DNA.getPoisonAttractionIndex()].position !== null) {
-      var steer = this.seek(closest[DNA.getPoisonAttractionIndex()].position);
+    if (closest[DNA.getPoisonRepultionIndex()].position !== null) {
+      var steer = this.seek(closest[DNA.getPoisonRepultionIndex()].position);
       // Let's make every food FOOD even if it's poison.
       // The only way creatures can identify poison is if it's inside their view radius
-      steer.mult(closest[DNA.getPoisonAttractionIndex()].distance > this.dna.getPoisonViewRadius() ? 2 : this.dna.getPoisonAttraction());
+      steer.mult(closest[DNA.getPoisonRepultionIndex()].distance > this.dna.getPoisonViewRadius() ? 2 : this.dna.getPoisonRepultion());
       this.applyForce(steer);
     }
 
     // If it's not moving towards nothing
-    if (closest[DNA.getFoodAttractionIndex()].position === null && closest[DNA.getPoisonAttractionIndex()].position == null) {
+    if (closest[DNA.getFoodAttractionIndex()].position === null && closest[DNA.getPoisonRepultionIndex()].position == null) {
       // Seek some random point inside canvas
       this.randomSeekingPoint = this.randomSeekingPoint && (!this.isNear(this.randomSeekingPoint)) ? this.randomSeekingPoint : createVector(random(width), random(height));
       this.applyForce(this.seek(this.randomSeekingPoint))
@@ -139,7 +150,7 @@ class Creature {
 
       // Show Poison Attraction DNA
       stroke(255, 0, 0);
-      line(0, -10, -this.dna.getPoisonAttraction() * 50, 0);
+      line(0, -10, -this.dna.getPoisonRepultion() * 50, 0);
 
       // Show Food View Radius
       noFill();
@@ -161,7 +172,7 @@ class Creature {
   }
 
   clone() {
-    if (this.canClone()) {
+    if (this.canClone() && random() < 0.2) {
       this.health = 0.5;
       var newDNA = new DNA(this.dna.data);
       newDNA.mutate();

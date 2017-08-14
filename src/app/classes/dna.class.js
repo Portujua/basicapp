@@ -2,7 +2,7 @@ class DNA {
   constructor(dna = [random(), -random(), random(0, 200), random(0, 100)]) {
     this.data = [
       dna[DNA.getFoodAttractionIndex()], 
-      dna[DNA.getPoisonAttractionIndex()], 
+      dna[DNA.getPoisonRepultionIndex()], 
       dna[DNA.getFoodViewRadiusIndex()], 
       dna[DNA.getPoisonViewRadiusIndex()], 
     ];
@@ -12,7 +12,7 @@ class DNA {
     return 0;
   }
 
-  static getPoisonAttractionIndex() {
+  static getPoisonRepultionIndex() {
     return 1;
   }
 
@@ -27,7 +27,7 @@ class DNA {
   mutate(chance = 0.1) {
     return [
       this.getFoodAttraction() * (random() < chance ? random() : 1),
-      this.getPoisonAttraction() * (random() < chance ? random() : 1),
+      this.getPoisonRepultion() * (random() < chance ? random() : 1),
       this.getFoodViewRadius() * (random() < chance ? random() : 2),
       this.getPoisonViewRadius() * (random() < chance ? random() : 2),
     ]
@@ -37,7 +37,7 @@ class DNA {
     return this.data[0]
   }
 
-  getPoisonAttraction() {
+  getPoisonRepultion() {
     return this.data[1]
   }
 
