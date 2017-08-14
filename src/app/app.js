@@ -22,6 +22,9 @@ function draw() {
     stats.addToAverage('avgFoodAttraction', creatures[c].dna.getFoodAttraction());
     stats.addToAverage('avgPoisonVision', creatures[c].dna.getPoisonViewRadius());
     stats.addToAverage('avgPoisonRepultion', creatures[c].dna.getPoisonRepultion());
+    stats.addToAverage('avgMaxSpeed', creatures[c].dna.getMaxSpeed());
+    stats.addToAverage('avgMaxForce', creatures[c].dna.getMaxForce());
+    stats.addMaxValues(creatures[c]);
 
     creatures[c].eat(food);
     creatures[c].update();

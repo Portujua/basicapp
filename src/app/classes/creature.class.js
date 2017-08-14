@@ -3,15 +3,16 @@ class Creature {
     this.x = x;
     this.y = y;
 
+    this.dna = dna || new DNA();
+
     this.acceleration = createVector(0, 0);
     this.velocity = createVector(0, 0);
     this.position = createVector(x, y);
     this.r = 4;
-    this.maxSpeed = 2;
-    this.maxForce = 0.2;
     this.health = 1;
 
-    this.dna = dna || new DNA();
+    this.maxSpeed = this.dna.getMaxSpeed();
+    this.maxForce = this.dna.getMaxForce();    
   }
 
   static healthDecay(health) {
@@ -150,7 +151,7 @@ class Creature {
 
       // Show Poison Attraction DNA
       stroke(255, 0, 0);
-      line(0, -10, -this.dna.getPoisonRepultion() * 50, 0);
+      line(0, -10, this.dna.getPoisonRepultion() * 50, 0);
 
       // Show Food View Radius
       noFill();
